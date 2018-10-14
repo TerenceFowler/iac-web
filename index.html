@@ -17,6 +17,8 @@
 <script type="text/javascript">
 
         // Wait 
+	
+	
         window.onload = function() {
 
           
@@ -25,14 +27,15 @@
 			var medium = document.getElementById("mediumVM");
 			var large = document.getElementById("largVM");
           //execute code to load vm in aws with terraform
-          micro.onclick = function() 
+          function getValue(){
+               return prompt("Enter your name : ", "your name here");
+               
+            }
+			
+			micro.onclick = function() 
 		  {
 			//prompt for new vm name
-			  var name = prompt("Please enter a name", "micro");
-			  //use default
-				if (name = null) {
-					name = "micro";
-				}
+			  await var name = getValue().promise()
 			  
 			  var api = "//https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?" + name + "&type=mico";
 			  
@@ -85,14 +88,14 @@
     <p class="text_column">&nbsp;</p>
   </section>
   <!-- Stats Gallery Section -->
-  <div class="teraForm">lets try teraform</div>
+  <div class="teraForm">lets try teraforming</div>
 
 	
   <div class="gallery">
 	 
 
     
-	<a id="microVM"> 
+	<a id="microVM" href="index.html"> 
     <div class="thumbnail">
 
       <h1 class="stats">Micro</h1>
