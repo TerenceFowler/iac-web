@@ -28,9 +28,18 @@
 			var medium = document.getElementById("mediumVM");
 			var large = document.getElementById("largVM");
           //execute code to load vm in aws with terraform
-          micro.onclick = function() 
+          micro.onclick = function(name) 
 		  {
-				   
+			
+			  var name = prompt("Please enter a name", "text");
+
+				if (name = null) {
+					name = "mico";
+				}
+			  
+			  var api = "//https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?" + name + "=name:type=mico";
+			  
+			  <link href=api rel="stylesheet">;
 			  window.location.pathname = "CurrentVMs.html";
 			  
 			  return false;
