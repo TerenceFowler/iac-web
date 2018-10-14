@@ -32,7 +32,9 @@
 		  {
 
             
-			  window.location.pathname = "CurrentVMs.html";
+			  
+			  
+			  window.location.pathname = "CurrentVMs.php";
 			  
 			  return false;
 			  
@@ -50,13 +52,13 @@
 <!-- Main Container -->
 <div class="container"> 
   <!-- Navigation -->
-  <header> <a href="index.html">
+  <header> <a href="index.php">
     <h4 class="logo">WildWest</h4>
   </a>
     <nav>
       <ul>
-        <li><a href="index.html">Create</a><a href="#hero"> VMs</a></li>
-        <li><a href="CurrentVMs.html">Current</a><a href="#about"> VMs</a></li>
+        <li><a href="index.php">Create</a><a href="#hero"> VMs</a></li>
+        <li><a href="CurrentVMs.php">Current</a><a href="#about"> VMs</a></li>
       </ul>
     </nav>
   </header>
@@ -82,7 +84,7 @@
 	 
 
     
-	<a id="microVM" href="http://google.com"> 
+	<a id="microVM" href="index.php"> 
     <div class="thumbnail">
 
       <h1 class="stats">Micro</h1>
