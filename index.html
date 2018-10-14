@@ -28,14 +28,15 @@
 			var large = document.getElementById("largVM");
           //execute code to load vm in aws with terraform
           function getValue(){
-               return prompt("Enter your name : ", "your name here");
+               
+			  return prompt("Enter your name : ", "your name here").promise();
                
             }
 			
 			micro.onclick = function() 
 		  {
 			//prompt for new vm name
-			  await var name = getValue().promise()
+			  await var name = getValue()
 			  
 			  var api = "//https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?" + name + "&type=mico";
 			  
