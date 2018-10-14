@@ -29,7 +29,8 @@
           //execute code to load vm in aws with terraform
           function getValue(){
                
-			  return prompt("Enter your name : ", "your name here").promise();
+			  var value = prompt("Enter your name : ", "your name here");
+			  return value;
                
             }
 			
