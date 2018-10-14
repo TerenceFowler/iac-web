@@ -359,7 +359,7 @@ nav ul li {
 }
 
 /* Small Tablets */
-@media (min-width: 321px)and (max-width: 600px) {
+@media (min-width: 321px)and (max-width: 767px) {
 .logo {
 	width: 100%;
 	text-align: center;
