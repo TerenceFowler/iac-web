@@ -32,14 +32,19 @@
 			micro.onclick = function() 
 		  {
 			//prompt for new vm name
-			 var value =null;
+			 
 				
-				value = window.prompt("Enter VM Name", "micro");
-				
-				
+				var name = prompt("Please enter your name", "<name goes here>");
 
-				  return false;
+				if (name!= null) {
+					
+					str = "https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?name=" + name + "testing&type=micro";
+
+    				<link href=str rel="stylesheet">
+
+				}		
 				
+				 
 			  
           }
 		  
