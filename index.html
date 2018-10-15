@@ -33,15 +33,20 @@
 		  		{
 			//prompt for new vm name
 			 
-				var name = "-"
 				
-				name = prompt("Enter VM Name", "micro");
+				
+				var name = prompt("Enter VM Name", "micro");
+				
+				
 				
 				//while (name == "-")
 					//{}
-				
+				if (name==test)
+					{
+						var str = "https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?name=" + name + "testing&type=micro";
+					}
 					
-				//var str = "https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?name=" + name + "testing&type=micro";
+				
 
     			//	<link href=str rel="stylesheet">
 
