@@ -26,12 +26,12 @@
 			var small = document.getElementById("smallVM");
 			var medium = document.getElementById("mediumVM");
 			var large = document.getElementById("largeVM");
-			var large = document.getElementById("delete");
+			var vmDelete = document.getElementById("vmDelete");
 			var apiCall;
           //execute code to load vm in aws with terraform
         
 			
-			delete.onclick = function() 
+			vmDelete.onclick = function() 
 		  		{
 			
 			 		var apiBase = "https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?" ;
@@ -159,7 +159,7 @@
 		  
   </div>
 	
-	<a id="delete" href="#" target="_blank">
+	<a id="vmDelete" href="#" target="_blank">
 	<div class="teraForm">Delete all VMs</div>
 	</a>
 <!-- Parallax Section -->
