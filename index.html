@@ -21,37 +21,23 @@
 	
         window.onload = function() {
 
-          
+          	var vmName = 1; 
           	var micro = document.getElementById("microVM");
 			var small = document.getElementById("smallVM");
 			var medium = document.getElementById("mediumVM");
 			var large = document.getElementById("largVM");
+			var apiCall;
           //execute code to load vm in aws with terraform
         
 			
 			micro.onclick = function() 
 		  		{
-			//prompt for new vm name
-			 
+			
+			 		var apiBase = "https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?" ;
+					var apiCmd = "name=" + vmName + "&type=micro";
+					apiCall = apiBase + apiCmd;	
 				
-				
-				var name = prompt("Enter VM Name", "micro");
-				
-				
-				
-				//while (name == "-")
-					//{}
-				if (name==test)
-					{
-						var str = "https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?name=" + name + "testing&type=micro";
-						
-						<link href=str rel="stylesheet">
-					}
-					
-				
-
-    			
-
+					vmName++;
 				}		
 				
 		  
@@ -101,7 +87,7 @@
 	 
 
     
-	<a id="microVM" href=""> 
+	<a id="microVM" href="apiCall" target="_blank"> 
     <div class="thumbnail">
 
       <h1 class="stats">Micro</h1>
