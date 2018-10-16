@@ -26,17 +26,15 @@
 			var small = document.getElementById("smallVM");
 			var medium = document.getElementById("mediumVM");
 			var large = document.getElementById("largVM");
-			var apiCall;
+			var apiCmd;
           //execute code to load vm in aws with terraform
         
 			
 			micro.onclick = function() 
 		  		{
 			
-			 		var apiBase = "https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?" ;
-					var apiCmd = "name=" + vmName + "&type=micro";
-					apiCall = apiBase + apiCmd;	
-				
+					 apiCmd = "name=" + vmName + "&type=micro";
+
 					vmName++;
 				}		
 				
@@ -51,7 +49,7 @@
 <!-- Main Container -->
 <div class="container"> 
   <!-- Navigation -->
-  <header> <a href="index.html">
+  <header> <a href="https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?" onclick="location.href=this.href+apiCmd;return false;">
     <h4 class="logo">WildWest</h4>
   </a>
     <nav>
@@ -87,7 +85,7 @@
 	 
 
     
-	<a id="microVM"> 
+	<a id="microVM" href="index.html" > 
     <div class="thumbnail">
 
       <h1 class="stats">Micro</h1>
