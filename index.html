@@ -37,7 +37,7 @@
 			 		var apiBase = "https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?" ;
 					var apiCmd = "name=delete&type=delete";
 					apiCall = apiBase + apiCmd;	
-					document.getElementById('microVM').href = apiCall;
+					document.getElementById('delete').href = apiCall;
 			
 				}		
 			micro.onclick = function() 
@@ -159,8 +159,9 @@
 		  
   </div>
 	
-	<div class="teraForm"><a id="delete" href="#" target="_blank">Delete all VMs</a></div>
-		
+	<a id="delete" href="#" target="_blank">
+	<div class="teraForm">Delete all VMs</div>
+	</a>
 <!-- Parallax Section -->
   <!-- More Info Section -->
   <footer>
