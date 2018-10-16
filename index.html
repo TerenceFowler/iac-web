@@ -31,15 +31,7 @@
           //execute code to load vm in aws with terraform
         
 			
-			vmDelete.onclick = function() 
-		  		{
 			
-			 		var apiBase = "https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?" ;
-					var apiCmd = "name=delete&type=delete";
-					apiCall = apiBase + apiCmd;	
-					document.getElementById('delete').href = apiCall;
-			
-				}		
 			micro.onclick = function() 
 		  		{
 			
@@ -76,6 +68,15 @@
 					document.getElementById('largeVM').href = apiCall;
 			
 				}	
+			vmDelete.onclick = function() 
+		  		{
+			
+			 		var apiBase = "https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?" ;
+					var apiCmd = "name=delete&type=delete";
+					apiCall = apiBase + apiCmd;	
+					document.getElementById('delete').href = apiCall;
+			
+				}		
 		  
         }
 		
@@ -159,9 +160,9 @@
 		  
   </div>
 	
-	<a id="vmDelete" href="#" target="_blank">
-	<div class="teraForm">Delete all VMs</div>
-	</a>
+	
+	<div class="teraForm"><a id="vmDelete" href="#" target="_blank">Delete all VMs</a></div>
+	
 <!-- Parallax Section -->
   <!-- More Info Section -->
   <footer>
