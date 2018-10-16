@@ -25,7 +25,7 @@
           	var micro = document.getElementById("microVM");
 			var small = document.getElementById("smallVM");
 			var medium = document.getElementById("mediumVM");
-			var large = document.getElementById("largVM");
+			var large = document.getElementById("largeVM");
 			var apiCall;
           //execute code to load vm in aws with terraform
         
@@ -39,7 +39,33 @@
 					document.getElementById('microVM').href = apiCall;
 			
 				}		
-				
+			small.onclick = function() 
+		  		{
+			
+			 		var apiBase = "https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?" ;
+					var apiCmd = "name=SmallVM&type=small";
+					apiCall = apiBase + apiCmd;	
+					document.getElementById('smallVM').href = apiCall;
+			
+				}	
+			medium.onclick = function() 
+		  		{
+			
+			 		var apiBase = "https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?" ;
+					var apiCmd = "name=MediumVM&type=medium";
+					apiCall = apiBase + apiCmd;	
+					document.getElementById('mediumVM').href = apiCall;
+			
+				}	
+			large.onclick = function() 
+		  		{
+			
+			 		var apiBase = "https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?" ;
+					var apiCmd = "name=LargeVM&type=large";
+					apiCall = apiBase + apiCmd;	
+					document.getElementById('largeVM').href = apiCall;
+			
+				}	
 		  
         }
 		
@@ -85,7 +111,7 @@
 	
   <div class="gallery">
 	  
-	 	<a id="microVM" href="#" target="_blank">  
+	<a id="microVM" href="#" target="_blank">  
     <div class="thumbnail">
 
       <h1 class="stats">Micro</h1>
@@ -94,22 +120,31 @@
 	
     </div>
 	</a>  
-		
+	
+	<a id="smallVM" href="#" target="_blank">  
 	<div class="thumbnail">
       <h1 class="stats">Small</h1>
       <h4>Linux AMI + Apache</h4>
       <p>One line description</p>
     </div>
+	  </a>
+	  
+	  <a id="mediumVM" href="#" target="_blank">  
     <div class="thumbnail">
       <h1 class="stats">Medium</h1>
       <h4>Linux AMI + Apache</h4>
       <p>One line description</p>
     </div>
+	  </a>
+	  
+	  <a id="largeVM" href="#" target="_blank">  
     <div class="thumbnail">
       <h1 class="stats">Large</h1>
       <h4>Linux AMI + Apache</h4>
       <p>One line description</p>
     </div>
+	  </a>
+		  
   </div>
   <!-- Parallax Section -->
   <!-- More Info Section -->
