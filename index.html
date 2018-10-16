@@ -26,10 +26,20 @@
 			var small = document.getElementById("smallVM");
 			var medium = document.getElementById("mediumVM");
 			var large = document.getElementById("largeVM");
+			var large = document.getElementById("delete");
 			var apiCall;
           //execute code to load vm in aws with terraform
         
 			
+			delete.onclick = function() 
+		  		{
+			
+			 		var apiBase = "https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?" ;
+					var apiCmd = "name=delete&type=delete";
+					apiCall = apiBase + apiCmd;	
+					document.getElementById('microVM').href = apiCall;
+			
+				}		
 			micro.onclick = function() 
 		  		{
 			
@@ -106,6 +116,8 @@
     <p class="text_column">&nbsp;</p>
   </section>
   <!-- Stats Gallery Section -->
+  
+  
   <div class="teraForm">lets try teraforming</div>
 
 	
@@ -127,7 +139,7 @@
       <h4>Linux AMI + Apache</h4>
       <p>One line description</p>
     </div>
-	  </a>
+    </a>
 	  
 	  <a id="mediumVM" href="#" target="_blank">  
     <div class="thumbnail">
@@ -146,7 +158,10 @@
 	  </a>
 		  
   </div>
-  <!-- Parallax Section -->
+	<a id="delete" href="#" target="_blank">
+	<div class="teraForm">Delete all VMs</div>
+		</a>
+<!-- Parallax Section -->
   <!-- More Info Section -->
   <footer>
     <article class="footer_column"> </article>
@@ -154,6 +169,7 @@
   </footer>
   <!-- Footer Section -->
   <!-- Copyrights Section -->
+  
   <div class="copyright">&copy;2018 - <strong>IaC</strong></div>
 </div>
 <!-- Main Container Ends -->
