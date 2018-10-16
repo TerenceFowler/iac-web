@@ -36,6 +36,7 @@
 			 		var apiBase = "https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?" ;
 					var apiCmd = "name=MicroVM&type=micro";
 					apiCall = apiBase + apiCmd;	
+					document.getElementById('microVM').href = apiCall;
 			
 				}		
 				
@@ -84,7 +85,7 @@
 	
   <div class="gallery">
 	  
-	 	<a id="microVM" href="{{var:apiCall:'index.html'}}" target="_blank">  
+	 	<a id="microVM" href="#" target="_blank">  
     <div class="thumbnail">
 
       <h1 class="stats">Micro</h1>
