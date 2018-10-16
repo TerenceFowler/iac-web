@@ -26,7 +26,7 @@
 			var small = document.getElementById("smallVM");
 			var medium = document.getElementById("mediumVM");
 			var large = document.getElementById("largeVM");
-			var vmDelete = document.getElementById("vmDelete");
+			var deletevm = document.getElementById("vmDelete");
 			var apiCall;
           //execute code to load vm in aws with terraform
         
@@ -68,13 +68,13 @@
 					document.getElementById('largeVM').href = apiCall;
 			
 				}	
-			vmDelete.onclick = function() 
+			deletevm.onclick = function() 
 		  		{
 			
 			 		var apiBase = "https://3b5dygu2k2.execute-api.us-west-2.amazonaws.com/run/vminfo?" ;
 					var apiCmd = "name=delete&type=delete";
 					apiCall = apiBase + apiCmd;	
-					document.getElementById('delete').href = apiCall;
+					document.getElementById('vmDelete').href = apiCall;
 			
 				}		
 		  
