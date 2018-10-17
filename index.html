@@ -16,22 +16,22 @@
 <!-- Terence Scripting -->
 <script type="text/javascript">
 
-        // Wait 
+        // Wait till page loads
 	
 	
         window.onload = function() {
 
-          	
+        // define global variables to be used to creat api calls to AWS API Gateway  	
           	var micro = document.getElementById("microVM");
 			var small = document.getElementById("smallVM");
 			var medium = document.getElementById("mediumVM");
 			var large = document.getElementById("largeVM");
 			var deletevm = document.getElementById("vmDelete");
 			var apiCall;
-          //execute code to load vm in aws with terraform
-        
+          
 			
-			
+			//create dynamic links based on the VM clicked
+
 			micro.onclick = function() 
 		  		{
 			
@@ -81,6 +81,7 @@
         }
 		
     </script>
+	<!--// END JS scripting -->
 	
 	
 </head>
@@ -94,7 +95,7 @@
     <nav>
       <ul>
         <li><a href="index.html">Create</a><a href="#hero"> VMs</a></li>
-        <li><a href="CurrentVMs.html">Current</a><a href="#about"> VMs</a></li>
+        <!--<li><a href="CurrentVMs.html">Current</a><a href="#about"> VMs</a></li> -->
       </ul>
     </nav>
   </header>
@@ -106,20 +107,25 @@
   <!-- About Section -->
   <section class="about" id="about">
     <h2 class="hidden">About</h2>
-    <p class="text_column">This is just a quick inteface to illsutrate spinning up a few VMs with different tools. </p>
-	 <p class="text_column">
-		There is a stict limit of 3 VMs per type to avoid excessive cost. However, current VMs are displayed on the <i>Current VM</i> page and may be destroyed from there. 
-		 
+    <p class="text_column">This is just a quick inteface to illsutrate spinning up a few VMs in AWS using API calls and hosted webserver. 
+	 <br><br>
+		There is a strict limit of 1 VM per type to avoid excessive cost; this is a public facing site. Please detroy VMs when leaving.
+		<br><br>Thank you :)
 	</p>
-   
-	  
+	  <p class="text_column">Mechanics behind this page: <br><br>This page is hosted on an EC2 instance in AWS Oregon. Selcecting one of the VM types makes an API call to AWS API Gateway, which in turn, triggers a Lambda function in AWS. Based on the command forwaded in the API call, the Lambda funciton creates resource-files in an S3 Bucket: iac-bucket. 
+	  </p>
+	  <p class="text_column">This webserver runs a <i>chrontab</i> job to pull updates from the iac-bucket. It then reasembles these files into 
+		  a Terraform Plan and exicutes that plan. Each VM created displays its own webpage advertising its type.<br><br>
+		  Lastly, I am by no means a web developer, and I made this on a plane. Hopefully it displays well enough in most browsers. 
+		  
+	  </p>
 	  
     <p class="text_column">&nbsp;</p>
   </section>
   <!-- Stats Gallery Section -->
   
   
-  <div class="teraForm">lets try teraforming</div>
+  <div class="teraForm">lets try terraforming</div>
 
 	
   <div class="gallery">
@@ -129,7 +135,7 @@
 
       <h1 class="stats">Micro</h1>
       <h4>Linux AMI + Apache</h4>
-      <p>One line description</p>
+      <p>1 CPU, 1GB RAM, 8GB SSD</p>
 	
     </div>
 	</a>  
@@ -138,7 +144,7 @@
 	<div class="thumbnail">
       <h1 class="stats">Small</h1>
       <h4>Linux AMI + Apache</h4>
-      <p>One line description</p>
+      <p>1 CPU, 2GB RAM, 8GB SSD</p>
     </div>
     </a>
 	  
@@ -146,7 +152,7 @@
     <div class="thumbnail">
       <h1 class="stats">Medium</h1>
       <h4>Linux AMI + Apache</h4>
-      <p>One line description</p>
+      <p>2 CPU, 4GB RAM, 8GB SSD</p>
     </div>
 	  </a>
 	  
@@ -154,7 +160,7 @@
     <div class="thumbnail">
       <h1 class="stats">Large</h1>
       <h4>Linux AMI + Apache</h4>
-      <p>One line description</p>
+      <p>2 CPU, 8GB RAM, 8GB SSD</p>
     </div>
 	  </a>
 		  
